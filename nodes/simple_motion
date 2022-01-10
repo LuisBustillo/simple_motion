@@ -121,7 +121,9 @@ def main():
     # Robot moves 1 m forward, rotate of 180 degrees, and moves 1 m forward.
     try:
         simple_motion.move_forward(1)
+        simple_motion.stop()
         simple_motion.rotate_in_place(math.pi)
+        simple_motion.stop()
         simple_motion.move_forward(1)
     except rospy.ROSInterruptException:
         rospy.logerr("ROS node interrupted.")
